@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-<p th:text="aqq">bqq</p>
+    <form method="post">
+        <div>
+            użytkownik:&nbsp;<input type="text" name="user">
+            <select th:object="${channel}" th:field="*{id}">
+                <option th:each="ch : ${channels}" th:value="${ch.id}" th:text="${ch.name}"></option>
+            </select>
+            <button type="submit">Dołącz</button>
+
+        </div>
+    </form>
 </body>
 </html>

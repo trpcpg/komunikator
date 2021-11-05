@@ -16,16 +16,20 @@ public class Message {
     private String id;
     private String text;
     private String user;
+    private String date;
 
     @DBRef
-    private String channel;
+    private Channel channel;
+
+    public Message(){}
 
     @Builder
-    public Message(String id, String text, String user, String channel) {
+    public Message(String id, String text, String user, Channel channel, String date) {
         super();
         this.id = id;
         this.text = text;
         this.user = user;
+        this.date = date;
         this.channel = channel;
     }
 }

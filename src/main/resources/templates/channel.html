@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:object="${message}">
+    <p th:text="${message.channel.name}"></p>
+  <table>
+    <tr th:each="msg : ${messages}">
+        <td th:text="${msg.date} + ' ' + ${msg.user}" style="width:90px">2021.06.13 tomek</td>
+        <td th:text="${msg.text}">blablavbla</td>
+    </tr>
+    <tr>
+        <td>Twój tekst:</td>
+        <td><input th:field="*{text}"/></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
